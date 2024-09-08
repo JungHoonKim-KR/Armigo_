@@ -5,6 +5,9 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 public class RequestFusingImage {
     @Override
@@ -21,4 +24,7 @@ public class RequestFusingImage {
     @Schema(description = "옷 사진")
     @NotEmpty
     private MultipartFile image2;
+
+    @Schema(description = "프롬프트")
+    private List<String> promptList = new ArrayList<>();
 }
